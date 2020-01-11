@@ -9,23 +9,31 @@
     <link rel="icon" href="https://p5js.org/assets/img/favicon.ico">
     <style>
         body {
-            margin: 0px;
-            padding: 0;
-            border: 0;
-            height: 100%;
-            overflow: hidden;
+            margin: 0;
+            background: black;
         }
 
-        #container {
+        #wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 100vw;
-            height: calc(100vw * 9 / 16);
-            margin: auto;
-            position: absolute;
-            top: 0px;
-            right: 0px;
-            bottom: 0px;
-            left: 0px;
-            background: #898989;
+            height: 100vh;
+        }
+
+        #aspect-ratio {
+            width: 100vw;
+            height: calc(100vw * 9/16);
+            position: relative;
+            background: blue;
+        }
+
+        @media screen and (min-aspect-ratio: 16/9) {
+            #aspect-ratio {
+                background: green;
+                height: 100vh;
+                width: calc(100vh * 16/9);
+            }
         }
     </style>
     <script>
@@ -33,7 +41,10 @@
 </head>
 
 <body>
-    <div id="container"></div>
+    <div id="wrapper">
+        <div id="aspect-ratio">
+        </div>
+    </div>
     <script src="build.js"></script>
 </body>
 
