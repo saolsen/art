@@ -1,11 +1,20 @@
-let tiles = [];
+interface Entity {
+    name: string,
+    cats: number,
+}
+
+let foos: Entity[];
 
 function setup() {
-    // Wait then, is innerWidth, innerHeight wrong?
     let canvas = createCanvas(100, 100);
     canvas.parent('aspect-ratio');
     const parent = document.getElementById('aspect-ratio');
     resizeCanvas(parent.clientWidth, parent.clientHeight, true);
+    foos = [
+        { name: "steve", cats: 7 },
+        { name: "james", cats: 100 }
+    ];
+    console.log(`Number of cats in foos 0 and 1: ${foos[0].cats + foos[1].cats}`);
 }
 
 function windowResized() {
